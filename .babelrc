@@ -1,0 +1,30 @@
+{
+  "presets": ["@babel/preset-typescript"],
+  "plugins": [
+    ["@babel/plugin-proposal-pipeline-operator", { "proposal": "minimal" }]
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            // useBuiltIns: key for @babel/preset-env for handling polyfills
+            // "usage" : tells babel to add polyfills based on usage
+            "useBuiltIns": "usage",
+            "corejs": {
+              "version": 3,
+              // also add proposals
+              "proposals": true
+            },
+            // logs relevent info for added polyfills & proposals in terminal
+            "debug": true
+          }
+        ]
+      ]
+    },
+    "development": {
+      "presets": [["@babel/preset-env"]]
+    }
+  }
+}

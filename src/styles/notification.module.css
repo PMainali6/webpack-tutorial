@@ -1,0 +1,18 @@
+/* purgecss ignore */
+/*
+ * the above comment needs to be added as in the build process
+ * the className is converted to [contenthash] 
+ * and the purgecss will remove as it will not match the .notification className
+ **/
+.notification {
+  background-color: #d4edda;
+  color: #155724;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  border: 1px solid red;
+}
